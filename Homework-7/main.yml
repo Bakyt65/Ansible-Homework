@@ -1,0 +1,31 @@
+- hosts: all
+  become: yes
+  tasks:
+  - name: Install the latest version of Apache
+    ansible.builtin.dnf:
+      name: httpd
+      state: latest
+
+  - name: Install Apache >= 2.4
+    ansible.builtin.dnf:
+      name: httpd >= 2.4
+      state: present
+
+
+  - name: Start apache
+    ansible.builtin.service:
+      name: httpd
+      state: started   
+      enabled: yes 
+
+  - name: Add the users
+    ansible.builtin.user:
+      name: "{{ item }}"
+      state: present
+    loop:
+      - jisoo
+      - lisa
+      - rose
+      - jenny
+
+    
