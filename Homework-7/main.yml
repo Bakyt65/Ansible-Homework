@@ -1,16 +1,10 @@
 - hosts: all
   become: yes
   tasks:
-  - name: Install the latest version of Apache
+  - name: Install the latest version of httpd
     ansible.builtin.dnf:
       name: httpd
       state: latest
-
-  - name: Install Apache >= 2.4
-    ansible.builtin.dnf:
-      name: httpd >= 2.4
-      state: present
-
 
   - name: Start apache
     ansible.builtin.service:

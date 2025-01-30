@@ -1,3 +1,4 @@
-3.21.105.164 ansible_user=ec2-user ansible_ssh_private_key_file=~/.ssh/id_rsa
-18.225.156.145 ansible_user=ec2-user ansible_ssh_private_key_file=~/.ssh/id_rsa
-13.58.123.109 ansible_user=ec2-user ansible_ssh_private_key_file=~/.ssh/id_rsa
+
+vm2 ansible_host=18.118.30.20 ansible_user=ec2-user
+vm3 ansible_host=3.137.164.64 ansible_user=ec2-user
+vm4 ansible_host=18.118.30.20 ansible_user=ec2-user
