@@ -1,0 +1,26 @@
+- hosts: kaizen
+  become: yes
+  vars:
+    hello:
+      - httpd
+      - tree
+      - unzip
+      - git
+      - wget
+    # service: apache2   why we need it ?
+    world: "httpd"
+    kaizen: "started"
+
+  tasks:
+  - name: Install packages
+    ansible.builtin.dnf:
+      name: "{{ hello }}"
+      state: latest
+
+
+  - name: Start httpd
+    ansible.builtin.service:
+      name: "{{ world }}"
+      state: "{{ kaizen }}"
+      enabled: yes
+
