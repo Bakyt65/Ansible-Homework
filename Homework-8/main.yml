@@ -7,7 +7,6 @@
       - unzip
       - git
       - wget
-    # service: apache2   why we need it ?
     world: "httpd"
     kaizen: "started"
 
